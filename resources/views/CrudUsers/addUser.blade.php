@@ -13,7 +13,7 @@
             <label class="d-block input-group-text" for="name">name</label> 
             <input class="form-control" placeholder="name" type="text " name='name' value="@if($errors->first('name'))@else{{ old('name') }}@endif">      
             @error('name')
-            <div class="alert alert-danger">{{ $message }}</div>
+            <div class="alert alert-danger">{{ $message }}</div> 
             @enderror   
         </div>           
         <div class="form-group">
@@ -49,7 +49,7 @@
                     @endif
                     @endforeach 
                 </select>    
-            </div>
+            </div>   
 
 
                 

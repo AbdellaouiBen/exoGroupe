@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // welcome
-Route::get('/','UserController@index')->name('welcome');
+Route::get('/','WelcomeController@index')->name('welcome');
 
 // User
 Route::get('/arrUser','UserController@index')->name('arrUser');

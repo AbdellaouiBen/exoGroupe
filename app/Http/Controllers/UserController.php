@@ -56,7 +56,7 @@ class UserController extends Controller
     {
         $users = User::find($id);
         $avatars = Avatar::all();
-        return view('CrudUsers/addUser',compact('avatars','users'));
+        return view('CrudUsers/editUser',compact('avatars','users'));
     }
 
     /**
@@ -72,9 +72,9 @@ class UserController extends Controller
 
         $users->name =  $request->input('name');
         $users->age =  $request->input('age');
-        $users->email =  $request->input('email');
+        $users->email =  $request->input('email'); 
         $users->id_avatar =  $request->input('id_avatar');
-
+ 
         $users->save();
 
         return redirect()->route('arrUser');
@@ -85,7 +85,7 @@ class UserController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function destroy($id)
     {
         $users = User::find($id);

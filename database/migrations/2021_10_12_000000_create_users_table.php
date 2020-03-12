@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->id(); 
             $table->string('name');
             $table->integer('age');
             $table->string('email')->unique();
@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->bigInteger('id_avatar')->unsigned();
             $table->foreign('id_avatar')
-                ->on('avatars')
+                ->on('avatars')               
                 ->references('id')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
