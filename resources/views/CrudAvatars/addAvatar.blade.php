@@ -1,5 +1,3 @@
-name
-image
 @extends('layout.master')
 
 @section('content')

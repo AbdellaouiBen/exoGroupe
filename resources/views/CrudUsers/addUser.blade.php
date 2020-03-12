@@ -45,7 +45,8 @@
                     @if ( old('id_avatar') ==$avatar->id)
                         <option selected value="{{$avatar->id}}">{{$avatar->name}}</option>                  
                     @else
-                        <option value="{{$avatar->id}}">{{$avatar->name}}</option>  
+                        <option value="{{$avatar->id}}">{{$avatar->name}}</option>    
+                        {{-- <option style="background-image:url({{asset('storage/'.$avatar->photo)}});" value="{{$avatar->id}}">{{$avatar->name}} </option>  --}}
                     @endif
                     @endforeach 
                 </select>    

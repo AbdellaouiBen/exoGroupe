@@ -22,6 +22,8 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+
+        
         $users = new User();
 
         $users->name =  $request->input('name');
@@ -59,7 +61,7 @@ class UserController extends Controller
         return view('CrudUsers/editUser',compact('avatars','users'));
     }
 
-    /**
+    /**   
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

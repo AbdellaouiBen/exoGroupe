@@ -18,7 +18,7 @@
         <div class="form-group">
             <label class="d-block input-group-text" for="image">image</label>
             <input class="form-control @error('image') is-invalid @enderror" type="file" name='image' >
-            @error('age')
+            @error('image')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 

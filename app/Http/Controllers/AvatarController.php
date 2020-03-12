@@ -26,13 +26,18 @@ class AvatarController extends Controller
 
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'image'=>'required|image',
+            'name'=>'required',
+        ]);
+
+     
+
         $avatars = new Avatar();
 
         $img = $request->file('image');
         $newName = Storage::disk('public')->put('',$img);	
 
-
-          
         $avatars->image =  $newName;
         $avatars->name =  $request->input('name');
 
@@ -55,6 +60,11 @@ class AvatarController extends Controller
 
     public function update(Request $request,  $id)
     {
+        $validatedData = $request->validate([
+            'image'=>'required|image',
+            'name'=>'required',
+        ]);
+            
         $avatars = Avatar::find($id);
         Storage::disk('public')->delete($avatars->image);
 
