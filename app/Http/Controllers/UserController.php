@@ -22,6 +22,10 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'name'=>'required',
+            'age'=>'required|integer|max:140',
+        ]);
 
         
         $users = new User();
