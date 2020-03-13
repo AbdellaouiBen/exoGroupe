@@ -59,7 +59,7 @@ class ImageController extends Controller
         $images->name =  $request->input('name');
         $images->id_categorie =  $request->input('id_categorie');
         $images->save();
-        return redirect()->route('arrImage');
+        return redirect()->route('arrImage'); 
     }
  
     public function destroy($id)

@@ -31,8 +31,6 @@ class UserController extends Controller
             'email'=>'required|email|unique:users',
             'password'=>'required|min:4',
         ]);
-
-        
         $users = new User();
 
         $users->name =  $request->input('name');
