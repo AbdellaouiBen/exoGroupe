@@ -63,7 +63,7 @@ class ImageController extends Controller
     }
  
     public function destroy($id)
-    {
+    { 
         $images = Image::find($id);
         Storage::disk('public')->delete($images->image);
 
