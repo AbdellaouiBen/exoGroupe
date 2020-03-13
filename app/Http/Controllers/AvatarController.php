@@ -18,7 +18,15 @@ class AvatarController extends Controller
     }
     public function create()
     {
-        return view('CrudAvatars/addAvatar');
+        $avatars = Avatar::all();
+
+        if (count($avatars)<5) {
+            return view('CrudAvatars/addAvatar');        
+        } else {
+            return redirect()->route('arrAvatar');
+        }
+        
+        
     }
     public function store(Request $request)
     {

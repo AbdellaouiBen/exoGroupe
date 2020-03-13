@@ -6,9 +6,15 @@
     
     <div class="container">
         <h1 class="text-center">Avatars</h1>
-        <a href="{{route('addAvatar')}}">
-            <button class="btn btn-success d-block mx-auto">Ajouter un Avatar</button>
-        </a>
+        @if (count($avatars)<5)
+            <a href="{{route('addAvatar')}}">
+                <button class="btn btn-success d-block mx-auto">Ajouter un Avatar</button>
+            </a>        
+        @else
+            <p class="text-danger text-center
+            ">Vous ne pouvez plus ajouter d'avatar</p>
+        @endif
+        
         <table class="table">
             <thead>
               <tr  class="row bg-danger text-white">
