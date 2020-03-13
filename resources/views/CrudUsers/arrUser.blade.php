@@ -28,7 +28,14 @@
                         <td class="col-2">{{$user->age}}</td>
                         <td class="col-3">{{$user->email}}</td>
                         
-                        <td class="col-1">{{$user->id_avatar}}</td>
+                        {{-- <td class="col-1">{{$user->id_avatar}}</td> --}}
+                        <td class="col-1">
+                            @foreach ($avatars as $avatar)
+                                @if ($user->id_avatar == $avatar->id)
+                                    <img class="img-fluid" src="{{asset('storage/'.$avatar->image)}}" alt="">
+                                @endif
+                            @endforeach    
+                        </td>
                         <td class="col-3">
                             <a href="{{route('editUser',$user->id)}}"><button class="btn btn-warning">edit</button></a>
                             <a href="{{route('deleteUser',$user->id)}}"><button type='submit' class="btn btn-danger">Supprimer</button></a>

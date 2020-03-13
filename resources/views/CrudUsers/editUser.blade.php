@@ -25,8 +25,17 @@
         </div>           
         <div class="form-group">
             <label class="d-block input-group-text" for="email">email</label>
-            <input class="form-control @error('email') is-invalid @enderror" type="text" name='email' value="{{$users->email}}">
+            <input class="form-control @error('email') is-invalid @enderror" type="text" name='email' placeholder="email" value="{{$users->email}}">
             @error('email')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+        </div>           
+ 
+        <div class="form-group">
+            <label class="d-block input-group-text" for="password">mot de passe</label>
+            <input class="form-control @error('password') is-invalid @enderror" type="password" name='password' value="{{$users->password}}">
+            @error('password')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 

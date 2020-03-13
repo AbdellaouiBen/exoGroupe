@@ -32,7 +32,7 @@
         </div>
         <div class="form-group">
             <label class="d-block input-group-text" for="email">email</label>
-            <input class="form-control @error('email') is-invalid @enderror" type="text" name='email' value="@if($errors->first('email'))@else{{old('email')}}@endif">
+            <input class="form-control @error('email') is-invalid @enderror" type="text" name='email' placeholder="email" value="@if($errors->first('email'))@else{{old('email')}}@endif">
             @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
